@@ -5,6 +5,7 @@
                 <div class="s-type text-center">
                     <div class="s-type-list big">
                         <div class="anchor" style="position: absolute; left: 50%; opacity: 0;"></div>
+                        <label for="type-site"    data-id="group-site"><span>站内</span></label>
                         <label for="type-baidu"   data-id="group-a"><span>常用</span></label>
                         <label for="type-baidu1"  data-id="group-b"><span>搜索</span></label>
                         <label for="type-whois"   data-id="group-c"><span>工具</span></label>
@@ -16,80 +17,92 @@
             </div>
 
             <form action="https://www.baidu.com?s=" method="get" target="_blank" class="super-search-fm">
-                <input type="text" id="search-text" class="form-control smart-tips search-key" 
-                    zhannei="" placeholder="输入关键字搜索" style="outline:0" autocomplete="off">
+                <input type="text" id="search-text" class="form-control smart-tips search-key"
+                    zhannei="" placeholder="搜索导航内的网站名称或描述" style="outline:0" autocomplete="off">
                 <button class="submit" type="submit"><i class="iconfont icon-search"></i></button>
             </form>
 
             <div id="search-list" class="hide-type-list">
+                <!-- 站内搜索组（默认选中） -->
+                <div class="search-group group-site">
+                    <ul class="search-type">
+                        <li>
+                            <input hidden="" type="radio" name="type" checked="checked"
+                                id="type-site"
+                                value="site-search"
+                                data-placeholder="搜索导航内的网站名称或描述">
+                            <label for="type-site"><span class="text-muted">站内搜索</span></label>
+                        </li>
+                    </ul>
+                </div>
                 <div class="search-group group-a">
                     <ul class="search-type">
-		        <li><input hidden="" type="radio" name="type" checked="checked"
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-baidu"
-                                value="https://www.baidu.com/s?wd=" 
+                                value="https://www.baidu.com/s?wd="
                                 data-placeholder="百度一下，你就知道">
                             <label for="type-baidu"><span class="text-muted">百度</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-bing"
-                                value="https://cn.bing.com/search?q=" 
+                                value="https://cn.bing.com/search?q="
                                 data-placeholder="微软 Bing 搜索">
-			    <label for="type-bing"><span class="text-muted">必应</span></label>
+                            <label for="type-bing"><span class="text-muted">必应</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-google"
-                                value="https://www.google.com/search?q=" 
+                                value="https://www.google.com/search?q="
                                 data-placeholder="谷歌搜索">
-			    <label for="type-google"><span class="text-muted">谷歌</span></label>
+                            <label for="type-google"><span class="text-muted">谷歌</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-anaconda" 
-			        value="https://anaconda.org/search?q=" data-placeholder="Anaconda 软件搜索">
-			    <label for="type-anaconda"><span class="text-muted">软件</span></label>
+                        <li><input hidden="" type="radio" name="type"
+                                id="type-anaconda"
+                                value="https://anaconda.org/search?q=" data-placeholder="Anaconda 软件搜索">
+                            <label for="type-anaconda"><span class="text-muted">软件</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-pubmed"
-                                value="https://pubmed.ncbi.nlm.nih.gov/?term=" 
+                                value="https://pubmed.ncbi.nlm.nih.gov/?term="
                                 data-placeholder="PubMed 搜索/文章标题/关键字">
-			    <label for="type-pubmed"><span class="text-muted">文献</span></label>
+                            <label for="type-pubmed"><span class="text-muted">文献</span></label>
                         </li>
                     </ul>
                 </div>
                 <div class="search-group group-b">
                     <ul class="search-type">
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-baidu1"
-                                value="https://www.baidu.com/s?wd=" 
+                                value="https://www.baidu.com/s?wd="
                                 data-placeholder="百度一下，你就知道">
                             <label for="type-baidu1"><span class="text-muted">百度</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-google1"
-                                value="https://www.google.com/search?q=" 
+                                value="https://www.google.com/search?q="
                                 data-placeholder="谷歌搜索">
                             <label for="type-google1"><span class="text-muted">谷歌</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-360"
-                                value="https://www.so.com/s?q=" 
+                                value="https://www.so.com/s?q="
                                 data-placeholder="360 好搜">
                             <label for="type-360"><span class="text-muted">360</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-sogo"
-                                value="https://www.sogou.com/web?query=" 
-                                data-placeholder="搜狗搜索"> 
+                                value="https://www.sogou.com/web?query="
+                                data-placeholder="搜狗搜索">
                             <label for="type-sogo"><span class="text-muted">搜狗</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-bing1"
-                                value="https://cn.bing.com/search?q=" 
+                                value="https://cn.bing.com/search?q="
                                 data-placeholder="微软 Bing 搜索">
                             <label for="type-bing1"><span class="text-muted">必应</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-sm"
-                                value="https://yz.m.sm.cn/s?q=" 
+                                value="https://yz.m.sm.cn/s?q="
                                 data-placeholder="UC 移动端搜索">
                             <label for="type-sm"><span class="text-muted">神马</span></label>
                         </li>
@@ -97,39 +110,39 @@
                 </div>
                 <div class="search-group group-c">
                     <ul class="search-type">
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-br"
                                 value="https://rank.chinaz.com/all/"
                                 data-placeholder="请输入网址(不带 https://)">
                             <label for="type-br"><span class="text-muted">权重查询</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-links"
-                                value="https://link.chinaz.com/" 
+                                value="https://link.chinaz.com/"
                                 data-placeholder="请输入网址(不带 https://)">
                             <label for="type-links"><span class="text-muted">友链检测</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-whois"
-                                value="https://who.is/whois/" 
+                                value="https://who.is/whois/"
                                 data-placeholder="请输入网址(不带 https://)">
                             <label for="type-whois"><span class="text-muted">域名信息查询</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-ping"
                                 value="https://ping.chinaz.com/"
                                 data-placeholder="请输入网址(不带 https://)">
                             <label for="type-ping"><span class="text-muted">PING 检测</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-404"
                                 value="https://tool.chinaz.com/Links/?DAddress="
                                 data-placeholder="请输入网址(不带https://)">
                              <label for="type-404"><span class="text-muted">死链检测</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input hidden="" type="radio" name="type"
                                 id="type-ciku"
-                                value="https://www.ciku5.com/s?wd=" 
+                                value="https://www.ciku5.com/s?wd="
                                 data-placeholder="请输入关键词">
                             <label for="type-ciku"><span class="text-muted">关键词挖掘</span></label>
                         </li>
@@ -137,27 +150,27 @@
                 </div>
                 <div class="search-group group-d">
                     <ul class="search-type">
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-zhihu" 
-                                value="https://www.zhihu.com/search?type=content&q=" 
+                        <li><input hidden="" type="radio" name="type"
+                                id="type-zhihu"
+                                value="https://www.zhihu.com/search?type=content&q="
                                 data-placeholder="知乎">
                             <label for="type-zhihu"><span class="text-muted">知乎</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-wechat" 
-                                value ="https://weixin.sogou.com/weixin?type=2&query=" 
+                        <li><input hidden="" type="radio" name="type"
+                                id="type-wechat"
+                                value ="https://weixin.sogou.com/weixin?type=2&query="
                                 data-placeholder="微信">
                             <label for="type-wechat"><span class="text-muted">微信</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                 id="type-weibo" 
-                                 value="https://s.weibo.com/weibo/" 
+                        <li><input hidden="" type="radio" name="type"
+                                 id="type-weibo"
+                                 value="https://s.weibo.com/weibo/"
                                  data-placeholder="微博">
                             <label for="type-weibo"><span class="text-muted">微博</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                 id="type-douban" 
-                                 value="https://www.douban.com/search?q=" 
+                        <li><input hidden="" type="radio" name="type"
+                                 id="type-douban"
+                                 value="https://www.douban.com/search?q="
                                  data-placeholder="豆瓣">
                             <label for="type-douban"><span class="text-muted">豆瓣</span></label>
                         </li>
@@ -165,39 +178,39 @@
                 </div>
                 <div class="search-group group-e">
                     <ul class="search-type">
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-taobao1" 
-                                value="https://s.taobao.com/search?q=" 
+                        <li><input hidden="" type="radio" name="type"
+                                id="type-taobao1"
+                                value="https://s.taobao.com/search?q="
                                 data-placeholder="淘宝">
                             <label for="type-taobao1"><span class="text-muted">淘宝</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-jd" 
-                                value="https://search.jd.com/Search?keyword=" 
+                        <li><input hidden="" type="radio" name="type"
+                                id="type-jd"
+                                value="https://search.jd.com/Search?keyword="
                                 data-placeholder="京东">
-                            <label for="type-jd"><span class="text-muted">京东</span></label> 
+                            <label for="type-jd"><span class="text-muted">京东</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-xiachufang" 
-                                value="https://www.xiachufang.com/search/?keyword=" 
+                        <li><input hidden="" type="radio" name="type"
+                                id="type-xiachufang"
+                                value="https://www.xiachufang.com/search/?keyword="
                                 data-placeholder="下厨房">
                             <label for="type-xiachufang"><span class="text-muted">下厨房</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-xiangha" 
-                                value="https://www.xiangha.com/so/?q=caipu&s=" 
+                        <li><input hidden="" type="radio" name="type"
+                                id="type-xiangha"
+                                value="https://www.xiangha.com/so/?q=caipu&s="
                                 data-placeholder="香哈菜谱">
                             <label for="type-xiangha"><span class="text-muted">香哈菜谱</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-12306" 
-                                value="https://www.12306.cn/?" 
+                        <li><input hidden="" type="radio" name="type"
+                                id="type-12306"
+                                value="https://www.12306.cn/?"
                                 data-placeholder="12306">
                             <label for="type-12306"><span class="text-muted">12306</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-qunar" 
-                                value="https://www.qunar.com/?" 
+                        <li><input hidden="" type="radio" name="type"
+                                id="type-qunar"
+                                value="https://www.qunar.com/?"
                                 data-placeholder="去哪儿">
                             <label for="type-qunar"><span class="text-muted">去哪儿</span></label>
                         </li>
@@ -205,57 +218,183 @@
                 </div>
                 <div class="search-group group-f">
                     <ul class="search-type">
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-zhaopin" 
-                                value="https://sou.zhaopin.com/jobs/searchresult.ashx?kw=" 
+                        <li><input hidden="" type="radio" name="type"
+                                id="type-zhaopin"
+                                value="https://sou.zhaopin.com/jobs/searchresult.ashx?kw="
                                 data-placeholder="智联招聘">
                             <label for="zhaopin"><span class="text-muted">智联招聘</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-51job" 
-                                value="https://search.51job.com/?" 
+                        <li><input hidden="" type="radio" name="type"
+                                id="type-51job"
+                                value="https://search.51job.com/?"
                                 data-placeholder="前程无忧">
                             <label for="type-51job"><span class="text-muted">前程无忧</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-lagou" 
-                                value="https://www.lagou.com/jobs/list_" 
+                        <li><input hidden="" type="radio" name="type"
+                                id="type-lagou"
+                                value="https://www.lagou.com/jobs/list_"
                                 data-placeholder="拉钩网">
                             <label for="type-lagou"><span class="text-muted">拉钩网</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-liepin" 
-                                value="https://www.liepin.com/zhaopin/?key=" 
+                        <li><input hidden="" type="radio" name="type"
+                                id="type-liepin"
+                                value="https://www.liepin.com/zhaopin/?key="
                                 data-placeholder="猎聘网">
                             <label for="type-liepin"><span class="text-muted">猎聘网</span></label>
                         </li>
                     </ul>
                 </div>
             </div>
+
+            <!-- 站内搜索结果浮层 -->
+            <div id="site-search-results" style="display:none;">
+                <div class="site-results-header">
+                    <span id="site-results-count"></span>
+                    <a href="javascript:;" id="site-results-close">✕ 关闭</a>
+                </div>
+                <div id="site-results-list"></div>
+            </div>
+
             <div class="card search-smart-tips search-hot-text">
                 <ul id="word" style="display: none"></ul>
             </div>
         </div>
     </div>
-    <!--div class="bulletin-big mx-3 mx-md-0">
-        <div id="bulletin_box" class="card my-2">
-            <div class="card-body py-1 px-2 px-md-3 d-flex flex-fill text-xs text-muted">
-                <div><i class="iconfont icon-bulletin" style="line-height:25px"></i></div>
-                <div class="bulletin mx-1 mx-md-2 carousel-vertical">
-                    <div class="carousel slide" data-ride="carousel" data-interval="3000">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active"><a class="overflowClip_1"
-                                    href="#">所长导航 - 用心精选每一个链接</a></div>
-                            <div class="carousel-item "><a class="overflowClip_1"
-                                    href="#">所长导航 - 有范的导航网站</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex-fill"></div>
-                <a title="关闭" href="javascript:;" rel="external nofollow" class="bulletin-close"
-                    onclick="$('#bulletin_box').slideUp('slow');"><i class="iconfont icon-close"
-                        style="line-height:25px"></i></a>
-            </div>
-        </div>
-    </div-->
 </div>
+
+<style>
+#site-search-results {
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    max-height: 420px;
+    overflow-y: auto;
+    margin-top: 2px;
+    position: relative;
+    z-index: 999;
+}
+.site-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px 6px;
+    font-size: 12px;
+    color: #aaa;
+    border-bottom: 1px solid #f0f0f0;
+}
+#site-results-close { color: #bbb; font-size: 12px; text-decoration: none; }
+#site-results-close:hover { color: #666; }
+#site-results-list { padding: 4px 0; }
+.site-result-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: inherit;
+    gap: 12px;
+    transition: background 0.15s;
+    border-bottom: 1px solid #f8f8f8;
+}
+.site-result-item:hover { background: #f5f8ff; text-decoration: none; color: inherit; }
+.site-result-logo {
+    width: 26px; height: 26px; border-radius: 4px;
+    object-fit: contain; flex-shrink: 0; background: #f5f5f5;
+}
+.site-result-logo-placeholder {
+    width: 26px; height: 26px; border-radius: 4px;
+    background: #e8edf5; display: flex; align-items: center;
+    justify-content: center; font-size: 12px; color: #6b8cba; flex-shrink: 0;
+}
+.site-result-info { flex: 1; min-width: 0; }
+.site-result-title {
+    font-size: 14px; font-weight: 500; color: #222;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.site-result-title mark { background: #fff3a3; color: inherit; padding: 0 1px; border-radius: 2px; }
+.site-result-desc {
+    font-size: 12px; color: #999;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.site-result-category { font-size: 11px; color: #bbb; flex-shrink: 0; }
+.site-no-results { text-align: center; padding: 20px; color: #bbb; font-size: 13px; }
+</style>
+
+<script>
+(function () {
+    var siteData = [
+        {{ range $ti, $tax := .Site.Data.webstack }}
+            {{ $category := $tax.taxonomy }}
+            {{ range $tax.links }}
+                { title:{{ .title | jsonify }}, url:{{ .url | jsonify }}, desc:{{ .description | jsonify }}, logo:{{ .logo | jsonify }}, category:{{ $category | jsonify }} },
+            {{ end }}
+        {{ end }}
+    ];
+
+    var isSiteSearch = true;
+
+    function hl(text, q) {
+        if (!text || !q) return text || '';
+        return text.replace(new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi'), '<mark>$1</mark>');
+    }
+
+    function doSiteSearch(q) {
+        if (!q) { closeResults(); return; }
+        var kw = q.toLowerCase();
+        var results = siteData.filter(function(d) {
+            return (d.title||'').toLowerCase().indexOf(kw)>-1 ||
+                   (d.desc ||'').toLowerCase().indexOf(kw)>-1 ||
+                   (d.category||'').toLowerCase().indexOf(kw)>-1;
+        });
+        document.getElementById('site-results-count').textContent = results.length ? '找到 '+results.length+' 个结果' : '';
+        var list = document.getElementById('site-results-list');
+        if (!results.length) {
+            list.innerHTML = '<div class="site-no-results">没有找到相关网站</div>';
+        } else {
+            list.innerHTML = results.slice(0,30).map(function(d) {
+                var logo = d.logo
+                    ? '<img class="site-result-logo" src="/assets/images/logos/'+d.logo+'" onerror="this.style.display=\'none\'">'
+                    : '<div class="site-result-logo-placeholder">'+(d.title||'?').charAt(0)+'</div>';
+                return '<a class="site-result-item" href="'+d.url+'" target="_blank" rel="noopener">'
+                    +logo+'<div class="site-result-info">'
+                    +'<div class="site-result-title">'+hl(d.title,q)+'</div>'
+                    +'<div class="site-result-desc">'+(d.desc||'')+'</div>'
+                    +'</div><span class="site-result-category">'+(d.category||'')+'</span></a>';
+            }).join('');
+        }
+        document.getElementById('site-search-results').style.display = 'block';
+    }
+
+    function closeResults() {
+        document.getElementById('site-search-results').style.display = 'none';
+    }
+
+    $(document).ready(function() {
+        // 默认触发"站内"tab
+        $('label[data-id="group-site"]').trigger('click');
+
+        $('input[name="type"]').on('change', function() {
+            isSiteSearch = (this.value === 'site-search');
+            $('#search-text').attr('placeholder', isSiteSearch ? '搜索导航内的网站名称或描述' : ($(this).data('placeholder')||'输入关键字搜索'));
+            if (!isSiteSearch) closeResults();
+        });
+
+        $('#search-text').on('input', function() {
+            if (!isSiteSearch) return;
+            var q = $(this).val().trim();
+            if (q.length >= 1) doSiteSearch(q); else closeResults();
+        });
+
+        $('.super-search-fm').on('submit', function(e) {
+            if (isSiteSearch) { e.preventDefault(); doSiteSearch($('#search-text').val().trim()); }
+        });
+
+        $('#site-results-close').on('click', closeResults);
+
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest('#search, #site-search-results').length) closeResults();
+        });
+
+        $(document).on('keydown', function(e) { if (e.key==='Escape') closeResults(); });
+    });
+})();
+</script>
