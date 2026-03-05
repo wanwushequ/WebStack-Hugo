@@ -40,7 +40,6 @@ body,html{font-size:14px;}
 .navbar-collapse ul li.menu-item-has-children:after{content:'\e612';}
 
 /*搜索部分背景样式*/
-/* .header-big.css-color{background-size:unset;background-position:unset;animation:unset;} */
 .header-big.css-color {
     background: linear-gradient(135deg, #1e3c72, #2a5298) !important;
     position: relative;
@@ -55,7 +54,15 @@ body,html{font-size:14px;}
                 radial-gradient(circle at 70% 50%, rgba(102,126,234,0.3) 0%, transparent 50%);
     animation: aurora 6s ease-in-out infinite alternate;
     pointer-events: none;
+    z-index: 0;  /* 加这行 */
 }
+
+/* 加这段，让容器内的子元素显示在光晕上方 */
+.header-big.css-color > * {
+    position: relative;
+    z-index: 1;
+}
+
 @keyframes aurora {
     0%   { transform: translate(0, 0) rotate(0deg); }
     100% { transform: translate(5%, 5%) rotate(10deg); }
