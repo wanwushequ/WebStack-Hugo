@@ -18,7 +18,7 @@
 
             <form action="https://www.baidu.com?s=" method="get" target="_blank" class="super-search-fm">
                 <input type="text" id="search-text" class="form-control smart-tips search-key"
-                    zhannei="" placeholder="搜索导航内的网站名称或描述" style="outline:0" autocomplete="off">
+                    zhannei="" placeholder="请输入关键字" style="outline:0" autocomplete="off">
                 <button class="submit" type="submit"><i class="iconfont icon-search"></i></button>
             </form>
 
@@ -30,7 +30,7 @@
                             <input hidden="" type="radio" name="type" checked="checked"
                                 id="type-site"
                                 value="site-search"
-                                data-placeholder="搜索导航内的网站名称或描述">
+                                data-placeholder="请输入关键字">
                             <label for="type-site"><span class="text-muted">站内搜索</span></label>
                         </li>
                     </ul>
@@ -321,6 +321,7 @@
 
 <script>
 (function () {
+    var logosPath = {{ $.Site.Params.logosPath | jsonify }};
     var siteData = [
         {{ range $ti, $tax := .Site.Data.webstack }}
             {{ $category := $tax.taxonomy }}
@@ -352,7 +353,7 @@
         } else {
             list.innerHTML = results.slice(0,30).map(function(d) {
                 var logo = d.logo
-                    ? '<img class="site-result-logo" src="/assets/images/logos/'+d.logo+'" onerror="this.style.display=\'none\'">'
+                    ? '<img class="site-result-logo" src="'+logosPath+'/'+d.logo+'" onerror="this.style.display=\'none\'">'
                     : '<div class="site-result-logo-placeholder">'+(d.title||'?').charAt(0)+'</div>';
                 return '<a class="site-result-item" href="'+d.url+'" target="_blank" rel="noopener">'
                     +logo+'<div class="site-result-info">'
